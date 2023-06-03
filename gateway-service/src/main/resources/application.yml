@@ -1,0 +1,53 @@
+
+server.port: 8118
+
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          my-keycloak-provider:
+            issuer-uri: http://localhost:8080/realms/demo
+            user-name-attribute: preferred_username
+        registration:
+          keycloak-spring-gateway-client:
+            provider: my-keycloak-provider
+            client-id: demo-service
+            client-secret: jtTwNaLXs8IK4TgoDbn8Au1Z3zBTRTgL
+            authorization-grant-type: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/keycloak'
+            scope: openid
+
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+      routes:
+        - id: product-resource-service
+          uri: http://localhost:9191
+          predicates:
+            - Path=/api/products/**
+          filters:
+            - StripPrefix=2
+            - AddRequestHeader=X-Client,web
+            - AddResponseHeader=X-Type,inorganic
+            - name: Retry
+              args:
+                retries: 3
+                methods: GET
+                backoff:
+                  firstBackoff: 50ms
+                  maxBackoff: 500ms
+
+management:
+    endpoint.health.enabled: true
+    endpoints:
+        web:
+            base-path: /actuator/info
+            exposure:
+                include: health
+        enabled-by-default: false
+
+logging:
+    level:
+        org.springframework.security: DEBUG

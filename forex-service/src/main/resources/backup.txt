@@ -1,0 +1,15 @@
+spring.application.name=forex-service
+server.port=8000
+
+eureka.client.service-url.default-zone=http://localhost:8761/eureka
+
+management.endpoints.web.base-path=/health
+management.endpoints.enabled-by-default=false
+management.endpoint.health.enabled=true
+management.endpoints.web.exposure.include=health
+
+spring.jpa.show-sql=true
+spring.jpa.defer-datasource-initialization=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.data.jpa.repositories.bootstrap-mode=default
+spring.h2.console.enabled=true

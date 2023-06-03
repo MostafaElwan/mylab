@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\d\Work\mine\workspaces\mylab\tech_cloud-config-server"/>
+			<item value="C:\d\Work\mine\workspaces\mylab\cloud-config-server"/>
+			<item value="C:\d\Work\mine\workspaces\mylab\"/>
+			<item value="C:\d\Work\mine\workspaces\mylab\springboot-keycloak"/>
+			<item value="C:\d\Work\mine\workspaces\mylab\product-service"/>
+			<item value="C:\d\Work\mine\workspaces\mylab\callme-service"/>
+			<item value="C:\d\Work\mine\workspaces\mylab"/>
+			<item value="C:\d\Work\mine\workspaces\mylab\router-service"/>
+			<item value="C:\d\Work\mine\workspaces\mylab\forex-service"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>
