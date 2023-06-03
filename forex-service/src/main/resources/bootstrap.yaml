@@ -10,11 +10,17 @@ eureka:
 
 spring:
     cloud.config:
-            discovery:
-                enabled: true
-                service-id: configurations-server
-            fail-fast: true
-            retry:
-                max-attempts: 60            
+      discovery:
+        enabled: true
+        service-id: configurations-server
+      fail-fast: true
+      retry:
+        max-attempts: 60            
     profiles:
         active: dev
+
+    security:
+      oauth2:
+        resourceserver:
+          jwt:
+            jwk-set-uri: http://localhost:8080/realms/${keycloak_realm_name}/protocol/openid-connect/certs

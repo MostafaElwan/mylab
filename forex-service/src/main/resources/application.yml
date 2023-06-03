@@ -2,11 +2,6 @@ server.port: ${forex_service_port}
 
 spring:
   application.name: forex-service
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://localhost:8080/realms/${keycloak_realm_name}/protocol/openid-connect/certs
   jpa:
     show-sql: true
     defer-datasource-initialization: true
